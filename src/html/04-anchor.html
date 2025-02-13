@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>하이퍼링크</title>
+  </head>
+  <body>
+    <h1>하이퍼링크</h1>
+    <h2>텍스트 링크</h2>
+    <!-- target="blank"하면 blank라는 탭을 찾음 -> 근데 없음 -> 없으면 새 탭을 blank로 만듦 -->
+    <a href="https://bootcamp.likelion.net/" target="_blank"
+      >멋쟁이 사자처럼 부트캠프</a
+    >
+    <br />
+    <!-- global attribute는 class / id / style/ title / data-*(사용자 정의) 이렇게 쓸 수 있음 -->
+    <!-- 여기서 title은 툴팁을 띄어줌 -->
+    <!-- 보안을 위해 noopener noreferrer: 신뢰 뭐시기 페이지 ... -->
+    <a
+      href="https://www.naver.com/"
+      title="네이버 사이트로 이동합니다. (새창)"
+      target="_blank"
+      rel="noopener noreferrer"
+      >네이버</a
+    >
+    <br />
+    <h2>이미지 링크</h2>
+    <!-- a가 먼저 나오고 img가 뒤에 나와야함 -->
+    <a href="https://www.apple.com/"
+      ><img src="/src/assets/apple/apple_watch.jpeg" alt="애플워치" width="200"
+    /></a>
+    <h2>PDF 링크</h2>
+    <a
+      href="./../assets/pdf/google-seo-guide-ko.pdf"
+      download="google-seo-guide-ko.pdf"
+      >구글 SEO 가이드</a
+    >
+  </body>
+</html>
