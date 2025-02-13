@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>이미지 삽입하기</h1>
+    <h2>이미지 요소</h2>
     <!-- alt(대체 텍스트)에 요약하면 안되고, 이미지에 있는 내용을 다 써야함 -->
     <!-- ~~이미지, ~~로고, ~~아이콘 등등이라고 붙이면 안됨 -->
     <!-- jpeg, png, webp 같은건 비트맵 이미지 -->
@@ -40,8 +41,10 @@
      svg는 요청이 없기 때문에 성능 관점에서 이득
      근데 이미지는 alt속성이 있는데 svg는 없음 
      타이틀 태그를 이용하거나 aria-label 속성 이용-->
+    <!-- 마크업에서는 px 단위 안쓰고 number 단위 씀 -->
     <svg
-      aria-label="1대1 채팅"
+      width="50"
+      height="50"
       class="h-12 w-12"
       viewBox="0 0 40 40"
       xmlns="http://www.w3.org/2000/svg"
@@ -74,5 +77,26 @@
         ></path>
       </g>
     </svg>
+
+    <br />
+    <h2>피규어 요소</h2>
+    <figure>
+      <!-- 캡션을 지정할 수 있음 -->
+      <!-- 이미지에 대한 캡션 -->
+      <!-- 캡션을 포함할 수 있는 컨테이너 -->
+      <!-- SEO: 검색 엔진 최적화 -->
+      <!-- SEO(즉, 검색 엔진)를 위해서는 alt에 적어놔야함 -->
+      <img src="/src/assets/drama/good-partner-narrow.webp" alt="굿파트너" />
+      <figcaption>드라마 굿파트너 속 장나라</figcaption>
+    </figure>
+    <br />
+    <figure>
+      <img
+        src="/src/assets/drama/culinary-class-wars-narrow.jpg"
+        alt="요리 계급 전쟁 흑백요리사 (새로운 에피소드 지금 시청하기)"
+      />
+      <figcaption>넷플릭스 흑백요리사</figcaption>
+    </figure>
+    <br />
   </body>
 </html>
