@@ -91,12 +91,28 @@
     </figure>
     <br />
     <figure>
+      <!-- lazy loading은 리소스를 필요할때만 로드하는 전략 -->
+      <!-- 지연 로딩은 애플리케이션의 여러 순간에 발생할 수 있지만,
+       일반적으로 스크롤 및 내비게이션과 같은 일부 사용자의 상호 작용에서 발생합니다.
+       웹툰같은거에서 나중에 스크롤해서 나오는거엔 lazy 걸어서 최적화 -->
       <img
         src="/src/assets/drama/culinary-class-wars-narrow.jpg"
         alt="요리 계급 전쟁 흑백요리사 (새로운 에피소드 지금 시청하기)"
+        width="284"
+        height="400"
+        loading="lazy"
       />
       <figcaption>넷플릭스 흑백요리사</figcaption>
     </figure>
     <br />
+    <figure>
+      <img
+        src="/src/assets/drama/mon-friend-son-narrow.webp"
+        alt="엄마 친구 아들 (새로운 에피소드 지금 시청하기)"
+        width="284"
+        height="400"
+      />
+      <figcaption>티빙에서 시청 - 엄마 친구 아들</figcaption>
+    </figure>
   </body>
 </html>
