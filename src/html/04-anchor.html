@@ -7,6 +7,37 @@
   </head>
   <body>
     <h1>하이퍼링크</h1>
+    <h2>하이퍼링크 및 이미지 UI 예제</h2>
+    <!-- interactive모델안에 interactive모델 못씀
+    ex. 버튼 안에 앵커 -->
+
+    <img src="/src/assets/cafew/card-02-@1x.jpg" alt="카페 작업" />
+    <p>
+      <strong>
+        RESPONSIVE WEB <br />
+        DESIGN STRATEGIES
+      </strong>
+    </p>
+    <p>반응형 웹디자인 전략</p>
+    <a href="/">강의 정보</a>
+
+    <figure>
+      <img src="/src/assets/cafew/card-02-@1x.jpg" alt="카페 작업" />
+      <figcaption>
+        <p>
+          <strong>
+            RESPONSIVE WEB <br />
+            DESIGN STRATEGIES
+          </strong>
+        </p>
+        <p>반응형 웹디자인 전략</p>
+        <a href="/">강의 정보</a>
+      </figcaption>
+    </figure>
+
+    <br />
+    <hr />
+    <br />
     <h2>텍스트 링크</h2>
     <!-- target="blank"하면 blank라는 탭을 찾음 -> 근데 없음 -> 없으면 새 탭을 blank로 만듦 -->
     <a href="https://bootcamp.likelion.net/" target="_blank"
@@ -35,5 +66,29 @@
       download="google-seo-guide-ko.pdf"
       >구글 SEO 가이드</a
     >
+
+    <h2>전화번호 또는 이메일 주소로 하이퍼 링크</h2>
+    <!-- mailto 프로토콜 이름 뒤에는 메일 뒤에는 제목 -->
+    <a href="mailto:seulbinim@gmail.com?subject=문의사항"
+      >seulbinim@gmail.com</a
+    >
+    <br />
+    <!-- tel 프로토콜 이건 모바일에서하면 전화걸기가 틀어짐 -->
+    <a href="tel:+821023456789">고객센터 010-2345-6789</a>
+
+    <!-- h2는 대표적인 블록 요소
+    a는 인라인 요소
+    인라인은 블록을 포함해선 안됨
+    블록은 인라인 포함 가능
+    따라서 2번째 있는것은 HTML4.01과 XHTML에선 불가능
+    근데 HTML5에선 가능하게 됨 -->
+    <!-- 다만, 두번째 있는건 스크린 리더 사용자에겐 불편함 -->
+    <h2><a href="/">제목</a></h2>
+    <p><a href="/">내용</a></p>
+
+    <a href="/">
+      <h2>제목</h2>
+      <p>내용</p>
+    </a>
   </body>
 </html>
