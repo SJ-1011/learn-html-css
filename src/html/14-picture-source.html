@@ -23,5 +23,23 @@
       src="/src/assets/logo/netflix@1x.png"
       alt="넷플릭스"
     />
+
+    <h2>W Descriptor 예시</h2>
+    <!-- 이미지를 담기 위한 컨테이너 요소 -->
+    <!-- 임베디드 요소 -->
+    <!-- figure는 이미지를 담기 위한 컨테이너가 아니라 캡션을 달기 위한 요소 -->
+    <picture>
+      <source
+        srcset="/src/assets/rwd/small-550.jpg 550w"
+        media="(max-width: 760px)"
+      />
+      <source
+        srcset="/src/assets/rwd/medium-1024.jpg 1024w"
+        media="(max-width: 1024px)"
+      />
+      <img src="/src/assets/rwd/small-550.jpg" alt="" />
+    </picture>
   </body>
 </html>
+
+<!-- /src/assets/rwd/normal-1920.jpg 1920w, /src/assets/rwd/large-1600.jpg 1600w -->
