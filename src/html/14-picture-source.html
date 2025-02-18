@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>picture, source 요소</title>
+  </head>
+  <body>
+    <!-- srcset, sizes 속성 -->
+    <img
+      srcset="
+        /src/assets/logo/netflix@1x.png 1x,
+        /src/assets/logo/netflix@2x.png 2x
+      "
+      src="/src/assets/logo/netflix@1x.png"
+      alt="넷플릭스"
+    />
+    <br />
+    <!-- 이미지 형식 -->
+    <!-- webp 파일 지원 안해주는 브라우저는 대체로 src에 png 넣어줘야함 -->
+    <img
+      srcset="/src/assets/logo/netflix@1x.webp"
+      src="/src/assets/logo/netflix@1x.png"
+      alt="넷플릭스"
+    />
+  </body>
+</html>
