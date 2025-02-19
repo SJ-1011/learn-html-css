@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>miniPage</title>
+    <style>
+      nav {
+        background-color: lightyellow;
+      }
+      nav ul {
+        list-style: none;
+        text-align: center;
+        display: flex;
+        gap: 5rem;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      .mainSection {
+        display: flex;
+        text-align: center;
+      }
+      figure img {
+        width: auto;
+        height: 15rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 hidden>mini 웹페이지</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/Practice/miniPage.html">HOME</a></li>
+        <li>My Image</li>
+        <li><a href="/index.html">Index.html</a></li>
+        <li>
+          <a href="https://www.google.com/" title="구글로 이동">Google</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="mainSection">
+        <section>
+          <figure>
+            <img src="/src/assets/images/rabbit.png" alt="토끼" />
+            <figcaption>제 페이지에 오신 것을 환영합니다~</figcaption>
+          </figure>
+        </section>
+        <section>
+          <figure>
+            <img src="/src/assets/images/tree.png" alt="나무" />
+            <figcaption>연습용 미니 웹 페이지입니다~</figcaption>
+          </figure>
+        </section>
+        <section>
+          <figure>
+            <img src="/src/assets/images/cloud.png" alt="구름" />
+            <figcaption>figure와 figcaption, img를 사용중입니다.</figcaption>
+          </figure>
+        </section>
+        <section>
+          <figure>
+            <img src="/src/assets/images/newyork.jpg" alt="뉴욕" />
+            <figcaption>display는 flex로 사용했습니다.</figcaption>
+          </figure>
+        </section>
+      </div>
+      <article></article>
+    </main>
+    <footer>
+      <small>copyright &copy; Likelion Bootcamp 2025</small>
+    </footer>
+  </body>
+</html>

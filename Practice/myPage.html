@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개인 페이지</title>
+    <style>
+      /* css의 셀렉터: table, th 이런거 */
+      table,
+      th,
+      td {
+        border: 1px solid currentColor;
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: yellow">
+      <span style="background-color: green"
+        >학습한 내용 기록용 개인 페이지</span
+      >
+    </h1>
+    <hr />
+    <h2>anchor 사용하기</h2>
+    <div>
+      <a
+        href="https://www.google.com/"
+        target="_blank"
+        title="누르면 구글로 이동합니다."
+        rel="noopener noreferrer"
+        >구글로 이동</a
+      >
+      <p>
+        이미지를 누르면 이동하는 것은 a 태그 안에 img를 넣어야 합니다. 반대는
+        안됩니다.
+      </p>
+      <a
+        href="https://www.daum.net/"
+        target="_blank"
+        title="이미지를 누르면 다음으로 이동합니다."
+        rel="noopener noreferrer"
+        ><img src="/src/assets/kakao/daum.png" alt="다음"
+      /></a>
+      <p>
+        pdf는 a 태그를 사용하며 href를 상대경로로 입력하고, download에 원하는
+        이름을 작성합니다.
+      </p>
+      <a
+        href="./../src/assets/pdf/google-seo-guide-ko.pdf"
+        download="google-seo-guide-ko.pdf"
+        >구글 SEO 가이드</a
+      >
+    </div>
+    <h2>목록 사용하기</h2>
+    <div>
+      <ul>
+        <li>이것은 순서가 없는 태그</li>
+        <ul>
+          <li>&lt;ul&gt; 태그입니다.</li>
+        </ul>
+        <li>특수문자를 입력 할 때 주의하세요.</li>
+      </ul>
+      <ol>
+        <li>이것은 순서가 있는 태그</li>
+        <li>&lt;ol&gt; 태그입니다.</li>
+        <li>3번까지 써봄 ㅋㅋ</li>
+      </ol>
+      <dl>
+        <dt>고양이</dt>
+        <dd>귀여운 동물</dd>
+        <dd>정의형 목록을 사용하고 싶다면</dd>
+        <dd>dl 태그에 감싸고, dt에 용어를, dd에 설명을 작성하세요.</dd>
+      </dl>
+    </div>
+    <h2>텍스트 요소</h2>
+    <h2>테이블</h2>
+    <div>
+      <caption>
+        테이블을 사용할때 캡션 태그를 사용해서 무슨 테이블인지 알려주면
+        좋습니다.
+      </caption>
+      <table>
+        <tr>
+          <th id="studentName">이름</th>
+          <th id="studentNumber">학번</th>
+          <th id="subject">과목</th>
+          <th id="grade">성적</th>
+        </tr>
+        <tr>
+          <td headers="studentName">홍길동</td>
+          <td headers="studentNumber">19학번</td>
+          <td headers="subject">컴퓨터공학개론</td>
+          <td headers="grade">A+</td>
+        </tr>
+        <tr>
+          <td headers="studentName">김철수</td>
+          <td headers="studentNumber">20학번</td>
+          <td headers="subject">컴퓨터공학개론</td>
+          <td headers="grade">C+</td>
+        </tr>
+        <tr>
+          <td headers="studentName">장나라</td>
+          <td headers="studentNumber">18학번</td>
+          <td headers="subject">데이터베이스</td>
+          <td headers="grade">A0</td>
+        </tr>
+      </table>
+      <p>아이디와 헤더를 입력하면 매칭하기 쉽습니다.</p>
+    </div>
+    <h2>블록 요소와 인라인 요소</h2>
+    <h2>img관련 요소</h2>
+    <h3>figure 사용하기</h3>
+    <div>
+      <p>figure 태그는 이미지에 캡션을 추가할 수 있습니다.</p>
+      <figure>
+        <img
+          src="/src/assets/food/icecream.webp"
+          alt="아이스크림"
+          loading="lazy"
+        />
+        <figcaption>아이스크림 대폭 할인중</figcaption>
+      </figure>
+      <p>
+        loading="lazy" 속성을 주면 서버에 이미지를 한번에 요청하지 않고,
+        이미지가 로드되어야 할 때에 요청하게 되어서 성능에 도움을 줍니다.
+      </p>
+      <figure>
+        <object
+          type="application/pdf"
+          data="/src/assets/pdf/wai-aria.pdf"
+          width="600"
+          height="480"
+        ></object>
+        <figcaption>WAI-ARIA</figcaption>
+      </figure>
+      <p>object를 사용하면 pdf를 이런 식으로 만들 수 있습니다.</p>
+    </div>
+    <h3>img 태그 자세히 알아보기</h3>
+    <div>
+      <img
+        srcset="
+          /src/assets/logo/netflix@1x.png 1x,
+          /src/assets/logo/netflix@2x.png 2x
+        "
+        src="/src/assets/logo/netflix@1x.png"
+        alt="넷플릭스"
+      />
+      <p>크기에 따라 조절하는 방식입니다.</p>
+      <picture>
+        <source
+          srcset="/src/assets/rwd/small-550.jpg 550w"
+          media="(max-width: 760px)"
+        />
+        <source
+          srcset="/src/assets/rwd/medium-1024.jpg 1024w"
+          media="(max-width: 1024px)"
+        />
+        <img src="/src/assets/rwd/large-1600.jpg" alt="" />
+      </picture>
+    </div>
+    <h2>비디오</h2>
+    <div>
+      <video
+        controls
+        muted
+        poster="/src/assets/video/poster.jpg"
+        src="/src/assets/video/google-developer-stories.mp4"
+      >
+        <track
+          src="/src/assets/video/stories-en.vtt"
+          kind="captions"
+          srclang="en"
+          label="English Caption"
+        />
+      </video>
+      <p>track 태그를 이용하면 자막을 사용할 수 있습니다.</p>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/fUcIe7-2zxw?si=JM8GkswKfGc1rjuB"
+        title="웹 접근성이란 - AOA11Y Youtube"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <p>iframe을 사용</p>
+    </div>
+    <h2>form과 input</h2>
+    <p>입력 창을 만들 수 있습니다.</p>
+    <form action="/">
+      <label for="dateInput">날짜를 입력하세요.</label>
+      <input type="date" id="dateInput" />
+    </form>
+    <p>form action에 서버 주소를 작성하셔야합니다.</p>
+    <form action="/">
+      <label for="colorInput">색을 입력하세요.</label>
+      <input type="color" id="colorInput" />
+    </form>
+    <form action="/">
+      <label for="rangeInput">범위를 입력하세요.</label>
+      <input type="range" id="rangeInput" />
+    </form>
+  </body>
+</html>
