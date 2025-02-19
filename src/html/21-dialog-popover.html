@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog 요소, popover 속성</title>
+    <style>
+      /* backdrop은 딤드 처리 */
+      dialog.panel-dialog::backdrop {
+        background: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);
+      }
+    </style>
+        <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+        // DOM 선택 부분 
+        const showDialogButton = document.querySelector('.show-dialog');
+        const closeDialogButton = document.querySelector('.close-dialog');
+        const dialog = document.querySelector('.panel-dialog');
+
+        // 함수 구현 부분
+        const openDialog = () => dialog.showModal();
+        const closeDialog = () => dialog.close();
+
+        // 이벤트 바인딩 부분
+        showDialogButton.addEventListener('click', openDialog);
+        closeDialogButton.addEventListener('click', closeDialog);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>dialog 요소, popover 속성</h1>
+    <h2>dialog 요소</h2>
+    <!-- 안내창, 팝업창을 보통 Modal window 모달 창 이라고 부름 -->
+      <div class="dialog-area">
+        <!-- 버튼 타입 생략하면 submit 타입으로 자동으로 지정됨 -->
+        <button type="button" class="show-dialog">모달창 보기</button>
+        <dialog class="panel-dialog" aria-labelledby="event">
+          <h3 id="event">깜짝 혜택</h3>
+          <p>AI 코딩 도구를 활용하면 코드 생성 및 자동화, 개발 워크플로우와의 통합 등이 가능하며 기존 개발 환경 대비 생산성을 높일 수 있습니다. 그러나 개발자를 꿈꾸며 학습을하는 예비 개발자에게 AI 코딩 도구는 양날의 검이 될 수 있습니다. AI 코딩 도구에만 의존하는 주니어 개발자는 경쟁력을 갖출 수 없기 때문입니다. 오히려 더 깊이 있게 언어를 학습하고 좋은 질문을 할 수 있도록 문해력(Literacy)을 기르는 것이 필요합니다. 다만 AI 도구를 완전히 배제하는 것이 아닌 학습을 위한 파트너로서 활용할 것을 추천합니다.</p>
+          <button type="button" class="close-dialog">닫기</button>
+        </dialog>
+      </div>
+    </div>
+
+    <h2>popover 속성</h2>
+    <button type="button" popovertarget="popoberContent" class="button-popover">팝오버 보기</button>
+    <div popover id="popoberContent">
+      <p>팝오버는 마우스를 올리면 나타나는 툴팁입니다.</p>
+      <p>팝오버는 마우스를 올리면 나타나는 툴팁입니다.</p>
+      <p>팝오버는 마우스를 올리면 나타나는 툴팁입니다.</p>
+      <p>팝오버는 마우스를 올리면 나타나는 툴팁입니다.</p>
+      <p>팝오버는 마우스를 올리면 나타나는 툴팁입니다.</p>
+    </div>
+  </body>
+</html>
