@@ -14,25 +14,44 @@
     <h2>input 요소</h2>
     <!-- 한줄 입력 서식 -->
     <!-- 액션 속성에다가 데이터 전송. 즉, 서버로 전송 -->
-    <form action="/">
+    <form action="/" method="post">
       <!-- 연관성있는 서식을 연결할 때 fieldset -->
       <fieldset>
         <legend>필수 입력 항목</legend>
         <!-- 모든 폼 서식은 1:1로 대응되는 label 요소를 가져야함 -->
         <div>
           <label for="userName">이름</label>
-          <input type="text" id="userName" />
+          <!-- required는 필수로 넣어야할 때 -->
+          <input
+            name="userName"
+            type="text"
+            id="userName"
+            required
+            placeholder="이름을 작성해 주세요."
+          />
+          <!-- placeholder를 사용할 때 접근성 주의 -->
         </div>
         <div>
           <!-- WAI-ARIA 쓸때 ID가 보통 필요함 -->
           <label for="userPwd">비밀번호</label>
-          <input type="password" id="userPwd" />
+          <input
+            name="userPwd"
+            type="password"
+            id="userPwd"
+            required
+            placeholder="8글자 이상 입력해주세요."
+          />
         </div>
         <div>
           <!-- HTML5에 새롭게 추가된 타입 search -->
           <label for="likelionSearch">검색</label>
-          <input type="search" id="likelionSearch" />
+          <input name="likelionSearch" type="search" id="likelionSearch" />
         </div>
+        <div>
+          <label for="userEmail">이메일</label>
+          <input name="userEmail" type="email" id="userEmail" />
+        </div>
+        <input type="submit" value="전송" title="input을 사용한 전송" />
       </fieldset>
       <fieldset>
         <legend>선택 입력 항목</legend>
