@@ -8,6 +8,7 @@ serif, sans-serif, cursive, fantasy, monospace
 /* :root {
   font-size: 10px;
   font-size: 5vw;
+  font-size: clamp(12px, 3vw, 24px);
 } */
 
 body {
