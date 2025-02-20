@@ -1,0 +1,72 @@
+body {
+  background-color: #ffc;
+}
+
+/* 태그 선택자 */
+p {
+  color: red;
+  /* 중첩 */
+  &:hover {
+    background-color: salmon;
+  }
+
+  &:focus {
+    border: 10px solid red;
+  }
+}
+
+/* 클래스 선택자 */
+.like {
+  color: green;
+}
+
+/* 아이디 선택자 */
+#lion {
+  color: blue;
+}
+
+/* 속성 선택자 */
+[title] {
+  color: purple;
+}
+
+/* 속성 선택자로 아이디 선택 */
+[id='lion'] {
+  text-align: center;
+}
+
+/* a 태그이면서 href를 가진 요소 */
+a[href^='https'] {
+  /* 에이전트 스타일 없애기 */
+  text-decoration: none;
+}
+
+a[href$='.pdf'] {
+  background-color: gray;
+}
+
+/* 가상 클래스 선택자 */
+/* 한번도 방문 안했을때 */
+a:link {
+  color: black;
+}
+
+/* 한번이라도 방문 했을때 */
+a:visited {
+  color: aqua;
+}
+
+/* 마우스에 올렸을때 */
+a:hover {
+  color: chocolate;
+}
+
+/* 키보드로 접근했을때 */
+a:focus {
+  color: brown;
+}
+
+/* 클릭하는 순간 분홍색 */
+a:active {
+  color: deeppink;
+}
