@@ -70,3 +70,14 @@ a:focus {
 a:active {
   color: deeppink;
 }
+
+/* 가상 요소 선택자 */
+/* : 하나면 클래스, ::면 요소 */
+h1::before {
+  /* before나 after는 반드시 content가 있어야함 */
+  content: '멋사';
+}
+
+h1::after {
+  content: '13기';
+}
