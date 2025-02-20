@@ -1,0 +1,48 @@
+/* generic-family
+serif, sans-serif, cursive, fantasy, monospace
+마지막에 써야함 */
+
+/* 루트 요소 */
+/* 루트요소는 보편적으로 16px을 갖고있음 */
+/* 보편적으로 루트는 안바꿈 */
+/* :root {
+  font-size: 10px;
+  font-size: 5vw;
+} */
+
+body {
+  /* font-family: 'Pretendard Variable'; */
+  font-family: 'SUIT', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-weight: 500;
+  /* font-size: 1.8rem; */
+  font-size: 1.5em;
+}
+
+/* font 속성 - 글자 크기, 굵기, 기울임꼴 */
+.size {
+  font-size: 150%;
+  font-weight: 300;
+  font-style: italic;
+  /* oblique, italic 기울임 */
+  /* line-height: 1.5; */
+  /* 작은 대문자 */
+  font-variant: small-caps;
+  font-family: 'Pretendard Variable', sans-serif';
+  /* font: bold italic small-caps 12px /1.5 'Pretendard Variable'; */
+}
+
+
+
+/* 단위 - rem */
+/* root(html 요소, :root = html)
+equal m */
+
+/* font-weight 폰트 굵기 */
+/* 폰트에서 static과 variable의 차이는 폭의 길이가 가변적인지 아닌지
+variable은 가변적임 글씨의 크기만큼 폭이 늘어남
+static은 정해져있음 */
