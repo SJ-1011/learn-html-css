@@ -1,0 +1,53 @@
+/* 포지션은 기본으로 static */
+@import '/src/common/mini-reset.css';
+body {
+  margin: 3.125rem;
+}
+/* 포지션이 static이면 top, bottom 이런거 못씀 */
+/* 포지션이 static이 아니게 되면 겹치게 됨
+겹치는 순서를 바꾸기 위해 z-index를 쓰기도 함 */
+
+/* 자기 자신의 공간이 유지되면서 위치가 바뀌게 됨 */
+h6 {
+  background-color: pink;
+}
+
+.lion {
+  border: 1px solid red;
+  /* div의 높이는 안에있는 컨텐츠의 높이로 결정됨 */
+  /* 자식 요소가 커지니까 부모 요소도 커지게됨
+  부모는 auto */
+  background-color: black;
+  .like {
+    background-color: yellow;
+    border: 1px solid blue;
+    position: relative;
+    height: 3.125rem;
+    left: -0.3125rem;
+    top: -0.3125rem;
+  }
+}
+
+.bootcamp {
+  background-color: aqua;
+  /* 원래 있던 자리에서 떠있게됨 */
+  /* position이 absolute or fixed가 되면 block으로 됨
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_formatting_context
+  BFC? */
+  /* 앱솔루트는 position이 static이 아닌 부모를 기준으로 좌표 옮김 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* top: 50px;
+  left: 50px; */
+  width: 100px;
+  height: 50px;
+}
+
+.box {
+  position: relative;
+  border: 1px solid black;
+  height: 100px;
+}
