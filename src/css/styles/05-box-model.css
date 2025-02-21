@@ -38,4 +38,62 @@ float은 화면에 떠 있는 객체
   /* 두개 쓰면 상하/좌우 */
   /* 세개 쓰면 위/좌우/아래 */
   padding: 20px 40px 100px;
+
+  /* width, height 속성으로 크기 지정 */
+  width: 150px;
+}
+
+/* width, height 속성으로 크기 지정 */
+/* 이건 컨텐츠의 너비, 높이 */
+/* inline일 경우 width가 적용되지 않음 */
+/* inline-block일 경우 width가 적용 됨 */
+.lion {
+  display: inline-block;
+  border: 5px solid orange;
+  /* width: 300px; */
+
+  /* line-height: ??; */
+
+  padding: 10px;
+}
+
+/* normal flow일땐 margin collapsing이 일어남
+flex, grid일땐 안일어남 */
+
+/* 바깥쪽 여백 설정 - margin */
+.like {
+  margin: 50px 50px 50px auto;
+}
+
+.lion {
+  display: block;
+  /* width의 초기 설정은 auto */
+  /* width: 300px; */
+  margin: 20px 0;
+}
+
+.teacher {
+  margin-bottom: 50px;
+}
+
+/* 박스 사이징 - box-sizing */
+.like {
+  box-sizing: border-box;
+  margin: 50px;
+  div {
+    background-color: yellow;
+  }
+}
+
+/* 음수 마진 */
+.teacher {
+  width: 300px;
+  /* 좌우에 auto 키워드 준거랑 같음 */
+  /* margin-inline: auto; */
+  margin-left: -50px;
+}
+
+.bootcamp {
+  border: 1px solid pink;
+  padding: 0 100px;
 }
