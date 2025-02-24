@@ -1,0 +1,92 @@
+/* :는 가상 클래스 */
+/* ::는 가상 요소 */
+/* 전역 변수 정의 */
+:root {
+  --primary-color: #17b654;
+  --secondary-color: #645e68;
+
+  --white: #fff;
+  --black: #000;
+  --red: #f00;
+  --green: #0f0;
+  --blue: #00f;
+}
+
+h1 {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* 콜백 */
+/* background-color: var(--primary, #786547); */
+/* 앞에있는거 쓰는데, 안되면 뒤에있는거 쓰기 (대안) */
+
+/* 지역 변수 */
+.container {
+  /* 지역 변수 정의 */
+  --secondary-color: #c93bc9;
+  /* 재할당 */
+  --bg-color: var(--green);
+  --border-color: var(--red);
+
+  h1 {
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+  }
+
+  p {
+    background-color: var(--primary-color);
+    border-color: var(--border-color);
+    border-width: 10px;
+    border-style: solid;
+  }
+}
+
+:root {
+  /* css 변수도 우선순위가 적용됨 *
+  /* h1 다음에 선언돼서 h1은 초록, p는 노란색이 나와야 한다고 생각했지만 */
+  /* css의 우선순위가 아래가 먼저기 때문에 둘 다 노란색이 됨 */
+  --primary-color: yellow;
+
+  /* 사이즈 */
+  --default: 1rem;
+  --small: 0.75rem;
+  --medium: 0.875rem;
+  --large: 1.125rem;
+}
+
+/* 지역변수를 다르게 */
+.container2 {
+  /* 지역 변수 정의 */
+  --secondary-color: #c93bc9;
+  /* 재할당 */
+  --bg-color: var(--blue);
+  --border-color: var(--blue);
+
+  h1 {
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+  }
+
+  p {
+    background-color: var(--primary-color);
+    border-color: var(--border-color);
+    border-width: 10px;
+    border-style: solid;
+  }
+}
+
+.wrapper {
+  button.small {
+    font-size: var(--small);
+  }
+  button.medium {
+    font-size: var(--medium);
+  }
+  button.large {
+    font-size: var(--large);
+  }
+  button.default {
+    font-size: var(--default);
+  }
+}
