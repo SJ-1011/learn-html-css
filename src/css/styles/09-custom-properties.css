@@ -77,16 +77,20 @@ h1 {
 }
 
 .wrapper {
-  button.small {
-    font-size: var(--small);
+  button.open {
+    --font-size: var(--small);
+    font-size: var(--font-size);
   }
-  button.medium {
-    font-size: var(--medium);
+  button.close {
+    --font-size: var(--default);
+    font-size: var(--font-size);
   }
-  button.large {
-    font-size: var(--large);
+  button.popup {
+    --font-size: var(--medium);
+    font-size: var(--font-size);
   }
-  button.default {
-    font-size: var(--default);
+  button.info {
+    --font-size: var(--large);
+    font-size: var(--font-size);
   }
 }
