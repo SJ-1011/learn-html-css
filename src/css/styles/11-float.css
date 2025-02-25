@@ -1,0 +1,40 @@
+/* import는 항상 맨 첫줄에 써야함 */
+@import '/src/common/theme.css';
+
+/* CSS의 display 속성으로 특정영역 보이지 않도록 설정 */
+.man-friend-son {
+  display: none;
+}
+
+/* float 사용하기 */
+.card {
+  background-color: var(--pastel-pink);
+  border: 1px solid green;
+
+  .thumbnail {
+    background: var(--pastel-yellow);
+
+    /* float: left하면 자식의 높이가 0 취급됨 */
+    /* float 요소의 부모에 직접 높이를 지정해서 일반 흐름을 벗어난 이미지다음 컨텐츠 영역에 영향을 주는거슬 피함 */
+    height: 120px;
+    img {
+      /* 부모 영역 안에서 왼/오 움직임 */
+      float: left;
+      width: 6.25rem;
+      /* typography 동작 방식으로, inline 요소는 아래쪽이나 위쪽에 gap이 생김
+      없애려면 div에 line-heignt를 조절하거나 display를 블록으로 만들기 */
+      /* line-height: 0; */
+      /* display: block; */
+      /* 얘도 여백 사라지게 함
+      다만, inline을 유지 */
+      vertical-align: middle;
+    }
+  }
+  .subject {
+    background: var(--pastel-blue);
+  }
+
+  .content {
+    background: var(--pastel-orange);
+  }
+}
