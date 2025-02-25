@@ -53,6 +53,8 @@ body {
     img {
       /* 부모와 같아서 상속이라 inherit써도 댐 */
       border-radius: var(--radius);
+      /* 파이어폭스 브라우저에서는 width를 설정해줘야함 */
+      width: 100%;
       aspect-ratio: 1/1;
       /* cover와 contain */
       object-fit: cover;
