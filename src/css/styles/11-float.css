@@ -1,6 +1,10 @@
 /* import는 항상 맨 첫줄에 써야함 */
 @import '/src/common/theme.css';
 
+body {
+  padding: 100px;
+}
+
 /* CSS의 display 속성으로 특정영역 보이지 않도록 설정 */
 .man-friend-son {
   display: none;
@@ -14,10 +18,34 @@
   .thumbnail {
     background: var(--pastel-yellow);
 
+    /* 잃어버린 높이를 주기 위해 */
+
     /* float: left하면 자식의 높이가 0 취급됨 */
     /* float 요소의 부모에 직접 높이를 지정해서 일반 흐름을 벗어난 이미지다음 컨텐츠 영역에 영향을 주는거슬 피함 */
-    height: 120px;
+    /* height를 쓰면 하드코딩이 되기 때문에 비효율적임 */
+    /* height: 120px; */
+
+    /* 내부 자식요소에서 넘치는게 있다면? 그 요소까지 포함해서 컨테이닝 블록을 만들고 렌더링 */
+    /* auto, hidden, scroll 가능. visible은 적용 안댐 */
+    /* 공식처럼 height, clear: both; 말고 쓰기도 함
+    안전하게 clear: both;도 같이 쓰기도 함 */
+    /* BFC가 뭔지 알아보기... mdn */
+    /* BFC로 렌더링 된다구함 */
+    /* BFC는 독립적인 레이아웃 */
+    /* overflow: hidden; */
+    /* 이렇게하면 아래의 문제1.이 해결이 됨 */
+    display: flow-root;
+
+    /* 화면에 띄울 때, 크기를 알려주지 않으면 콘텐츠의 크기로 auto로 되는데, 지금은 0이기 때문에 보이지 않음 */
+    /* 그래서 width 100%로 해야함 */
+    /* width: 100%;
+    float: left; */
+    border: 1px solid red;
+
     img {
+      /* 문제1. float으로 인해 부모 요소인 썸네일이 인식하지 못하는 높이를 포함하도록 BFC를 생성 */
+      position: relative;
+      left: -50px;
       /* 부모 영역 안에서 왼/오 움직임 */
       float: left;
       width: 6.25rem;
@@ -35,6 +63,11 @@
   }
 
   .content {
+    /* float의 영향권을 벗어나는 방법 clear:both; */
+    /* left를 해제하고 싶으면 left, rigth는 right;
+    둘다면 both */
+    /* clear 속성은 반드시 block 성향을 가지는 요소에만 지정할 수 있음 */
+    clear: both;
     background: var(--pastel-orange);
   }
 }
