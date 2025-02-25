@@ -1,0 +1,71 @@
+@import '/src/common/modern-reset.css';
+
+body {
+  font-family: SUIT, serif;
+}
+
+.card {
+  /* 독립적인 레이아웃 BFC - overflow:hidden, display:flow-root, float:left, position:absolute
+  얘네들이 독립적인 레이아웃으로 만들어줌 */
+  /* background-color: pink; */
+  margin: 2em; /* 32px */
+  border: 1px solid #aaa;
+
+  &.good-partner {
+    display: flow-root;
+  }
+
+  /* 숏핸드 속성 */
+  border-radius: 0.5rem;
+
+  padding: 2em;
+
+  /* 제목 */
+  .subject {
+    /* background-color: skyblue; */
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    span {
+      vertical-align: top;
+      &[lang='en'] {
+        font-size: 0.5em;
+      }
+    }
+  }
+
+  /* 이미지 */
+  .thumbnail {
+    --radius: 50%;
+    --size: 7.5rem;
+
+    border: 2px solid #ccc;
+    border-radius: var(--radius);
+    float: left;
+    margin: 0.625rem;
+    padding: 0.625rem;
+    width: var(--size);
+
+    shape-outside: circle(50%);
+
+    /* 자식의 높이에 따라 부모의 높이가 달라짐 이유: height가 오토라 */
+
+    img {
+      /* 부모와 같아서 상속이라 inherit써도 댐 */
+      border-radius: var(--radius);
+      aspect-ratio: 1/1;
+      /* cover와 contain */
+      object-fit: cover;
+      /* 포스터의 왼쪽 상단부터 (0, 0) */
+      object-position: 0 0;
+      /* 포스터의 왼쪽 하단부터 (0, 100%) */
+      object-position: 0 100%;
+      object-position: 50%;
+    }
+  }
+
+  /* 내용 */
+  .content {
+    margin-top: 0.625em;
+  }
+}
