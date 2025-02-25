@@ -1,0 +1,48 @@
+body {
+  font-family: SUIT, sans-serif;
+}
+
+/* 맴버 서비스 */
+.member-service {
+  background-color: yellow;
+  display: flow-root;
+  a {
+    text-transform: uppercase;
+    float: left;
+    margin-left: 1em;
+    text-decoration: none;
+    color: black;
+  }
+
+  a::before {
+    margin-right: 1em;
+    content: '|';
+  }
+
+  a.first::before {
+    margin-right: -1em;
+    content: '';
+  }
+}
+
+/* 맴버 링크 */
+.member-link {
+  background-color: pink;
+  padding: 0;
+  display: flow-root;
+
+  li {
+    float: left;
+    list-style: none;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      color: black;
+      margin-right: 1em;
+    }
+    span {
+      margin-right: 1em;
+    }
+  }
+}

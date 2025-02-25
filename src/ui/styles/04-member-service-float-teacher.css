@@ -1,0 +1,55 @@
+body {
+  font-family: SUIT, sans-serif;
+}
+
+/* 앵커, 버튼 등 기본 박스 사이즈가 다르기 때문이기 때문에
+다 맞춰줌 */
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* a는 inline인데 float로 하면 block이 됨
+그래서 사이에 있는 공백도 사라짐
+float가 되면 독립적인 BFC가 됨 */
+
+.member-service {
+  /* float가 된 자식을 포함시킴 */
+  display: flow-root;
+
+  a {
+    float: left;
+    text-transform: uppercase;
+  }
+  a:nth-child(n + 2)::before {
+    content: '|';
+    margin: 0 0.5em;
+  }
+}
+
+.member-link {
+  display: flow-root;
+  li {
+    float: left;
+    span {
+      float: left;
+      margin: 0 0.5em;
+    }
+    a {
+      float: left;
+      text-transform: uppercase;
+    }
+  }
+}
