@@ -1,21 +1,17 @@
+@import '/src/common/modern-reset.css';
 /* 조건에 따라 서로다른 스타일을 줄 수 있는게 미디어쿼리 */
 /* 기본으로 적용될 배경 색 */
 body {
   background-color: lime;
-}
-
-/* at 사인 규칙 */
-/* 화면 너비가 37.5rem 이상이면 핑크 */
-/* 뷰 포트 크기에 따라 적용될 배경색 - pink */
-@media (min-width: 37.5rem) {
-  body {
+  font-size: clamp(0.75rem, 0.75rem + 1vw, 1.5rem);
+  /* at 사인 규칙 */
+  /* 화면 너비가 37.5rem 이상이면 핑크 */
+  /* 뷰 포트 크기에 따라 적용될 배경색 - pink */
+  @media (min-width: 37.5rem) {
     background-color: pink;
   }
-}
-
-/* 가로 보기모드에서 적용될 배경색 */
-@media (orientation: landscape) {
-  body {
+  /* 가로 보기모드에서 적용될 배경색 */
+  @media (orientation: landscape) {
     background-color: orange;
   }
 }
