@@ -1,0 +1,36 @@
+@import '/src/ui/components/avatar/avatar.css';
+
+/* 아바타 리스트 */
+/* case 01 - inline-block */
+
+.case-01 {
+  background-color: yellow;
+  margin: 20px;
+  /* 64px * 4(이미지들) + 20px * 5(여백들) + border */
+  width: 360px;
+  border: 2px solid red;
+  border-radius: 4px;
+
+  ul {
+    background-color: pink;
+    font-size: 0;
+    padding: 10px;
+  }
+
+  li {
+    background-color: lime;
+    display: inline-block;
+    /* a11y를 위해 1rem 추가 */
+    font-size: 1rem;
+    margin: 10px;
+    /* 마진 겹침은 언제 일어나는지 GPT 물어보기
+    마진은 블록일때만 겹친다구함!!
+    인라인 블록은 안겹친다구함!!! */
+  }
+}
+/* case 02 - float */
+
+.case-02 {
+}
+/* case 03 - flex */
+/* case 04 - grid */
