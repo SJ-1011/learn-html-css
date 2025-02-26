@@ -28,9 +28,30 @@
     인라인 블록은 안겹친다구함!!! */
   }
 }
+/* inline-block도 BFC라고 함. 독립적인 영역. 마진이 병합되지않음. */
+
 /* case 02 - float */
 
 .case-02 {
+  background-color: yellow;
+  margin: 20px;
+  width: 360px;
+  border: 2px solid red;
+  border-radius: 4px;
+
+  ul {
+    background-color: pink;
+    font-size: 0;
+    padding: 10px;
+    display: flow-root;
+  }
+
+  li {
+    background-color: lime;
+    float: left;
+    font-size: 1rem;
+    margin: 10px;
+  }
 }
 /* case 03 - flex */
 /* case 04 - grid */
