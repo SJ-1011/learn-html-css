@@ -1,5 +1,10 @@
 @import '/src/common/theme.css';
 
+html,
+body {
+  font-family: SUIT, sans-serif;
+}
+
 body *,
 body *::before,
 body *::after {
@@ -14,23 +19,30 @@ body *::after {
   /* row-reverse는 float: right;와 같음 */
   flex-direction: row;
   border: 1px solid red;
-  padding: 10px;
+  /* padding: 10px; */
 
-  inline-size: 422px;
+  inline-size: 700px;
+  block-size: 522px;
+
+  /* 현재 row가 main이기 때문에 justify의 방향은 row */
+  justify-content: center;
+  align-items: baseline;
+  /* align-content는 여러 줄일때 의미가 큼 */
+  align-content: center;
 
   /* 플렉스 아이템도 BFC임 */
   /* 그래서 inline요소인 span도 블록형태처럼 생기게됨 */
   /* item이 포함된 속성... ^는 앞뒤 */
   [class*='item'] {
     /* BFC + flex item이라서 서로 마진이 안겹침 */
-    margin-block: 10px;
+    /* margin-block: 10px; */
 
     border: 1px solid currentColor;
     background: var(--pastel-yellow);
 
     /* 가로 세로 논리속성 */
-    inline-size: 100px;
-    block-size: 100px;
+    /* inline-size: 100px;
+    block-size: 100px; */
 
     /* 블록 안에 있는 인라인들이 정렬됨 */
     text-align: center;
@@ -51,13 +63,15 @@ body *::after {
   /* flex-wrap: wrap; */
 
   .item1 {
-    inline-size: 200px;
+    /* inline-size: 200px; */
+    font-size: 48px;
   }
 
   .item2 {
     /* inline-size: 300px; */
+    font-size: 30px;
   }
 
   /* flwx-direction, flex-wrap을 함께 쓸수 있는 숏핸드 키워드 */
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
