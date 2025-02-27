@@ -74,4 +74,12 @@ body *::after {
 
   /* flwx-direction, flex-wrap을 함께 쓸수 있는 숏핸드 키워드 */
   flex-flow: row wrap;
+
+  /* 요소들 상하좌우로 20px 갭 생김 */
+  gap: 20px;
+  row-gap: 30px;
+  column-gap: 50px;
+
+  /* row-gap, column-gap을 사용할 수 있는 단축 속성 */
+  gap: 20px 40px;
 }
