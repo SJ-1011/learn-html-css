@@ -1,0 +1,76 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+
+/* 테이블 스타일링 */
+.table-wrapper {
+  margin-inline: 20px;
+  margin-block: 100px;
+  block-size: 500px;
+  overflow: auto;
+}
+
+.table-styling {
+  border: 1px solid currentColor;
+  inline-size: 100%;
+
+  position: relative;
+  /* 선과 선이 만나서 병합돼서 심플해짐 */
+  border-collapse: collapse;
+
+  /* 간격이 없어지고 딱 붙어서 굵기가 2배 */
+  /* border-spacing: 0; */
+
+  caption {
+    font-size: 2rem;
+    line-height: 1.5;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  .number {
+    inline-size: 10%;
+  }
+
+  .name {
+    inline-size: 20%;
+  }
+
+  .email {
+    inline-size: 40%;
+  }
+
+  .phone {
+    inline-size: 30%;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  thead {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    /* border: 1px solid currentColor; */
+  }
+
+  thead tr,
+  tfoot tr {
+    background: rgb(28, 28, 59);
+    color: #fff;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--pastel-gray);
+  }
+
+  thead th {
+    border-color: white;
+  }
+}

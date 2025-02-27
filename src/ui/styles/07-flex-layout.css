@@ -5,6 +5,34 @@
 
 /* 미디어쿼리 768px */
 
+/* 플렉스 컨테이너 */
+.container {
+  @media (min-width: 768px) {
+    display: flex;
+    flex-flow: row wrap;
+
+    /* 직계 자식 전부 */
+    > * {
+      flex-basis: 100%;
+    }
+
+    .content,
+    .sidebar {
+      flex-basis: 50%;
+      block-size: 65vh;
+    }
+  }
+
+  /* 잘안되니까... 선생님 깃허브 가서 보기... */
+  @media (min-width: 1024px) {
+    .navigation,
+    .sidebar {
+      inline-size: 25%;
+      block-size: 65vh;
+    }
+  }
+}
+
 /* 헤더 */
 .header {
   background: var(--pastel-coral);
@@ -30,7 +58,8 @@
 }
 
 /* 메인 콘텐츠와 사이드바 그룹 wrapper */
-.wrapper {
+/* 전체를 플렉스 안줬을때 사용 */
+/* .wrapper {
   border: 3px solid red;
 
   @media (min-width: 768px) {
@@ -42,7 +71,7 @@
       block-size: 65vh;
     }
   }
-}
+} */
 
 /* 푸터 */
 .footer {
