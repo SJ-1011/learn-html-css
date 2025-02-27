@@ -7,7 +7,7 @@ body {
   /* at 사인 규칙 */
   /* 화면 너비가 37.5rem 이상이면 핑크 */
   /* 뷰 포트 크기에 따라 적용될 배경색 - pink */
-  @media (min-width: 37.5rem) {
+  @media (min-width: 37.5rem) and (max-width: 50rem) {
     background-color: pink;
   }
   /* 가로 보기모드에서 적용될 배경색 */

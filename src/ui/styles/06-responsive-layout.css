@@ -1,0 +1,73 @@
+/* adaptive web design이란 다양한 화면 크기와 장치에 맞춰 웹사이트의 레이아웃과 콘텐츠를 조정 */
+/* responsive design이란 모든 레이아웃과 콘텐츠를 조정 */
+/* 적응형 레이아웃이 더 성능이 좀 더 좋은편 */
+/* 근데 더 복잡하고 개발 비용이 클 수도 있음 */
+/* 모바일 먼저 구현해야함 (이유는 리소스) */
+/* 모바일을 기본으로 */
+/* 리셋은 순서상 먼저있는게 좋음 */
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+
+.container {
+  /* 헤더 */
+  .header {
+    background-color: var(--pastel-coral);
+    height: 10vh;
+  }
+  /* 내비게이션, 메인 콘텐츠, 사이드바 컨테이너 */
+  .nav-main-aside-wrapper {
+    display: flow-root;
+  }
+
+  /* 내비게이션 */
+  .navigation {
+    background-color: var(--pastel-green);
+    height: 15vh;
+    @media (min-width: 64rem) {
+      float: left;
+      width: 30%;
+      height: 80vh;
+    }
+  }
+
+  /* 메인 콘텐츠 및 사이드바 컨테이너 */
+  .content-wrapper {
+    @media (min-width: 48rem) {
+      display: flow-root;
+    }
+  }
+
+  /* 메인 콘텐츠 */
+  .content {
+    background-color: var(--pastel-aqua);
+    height: 45vh;
+    @media (min-width: 48rem) {
+      width: 50%;
+      float: left;
+      height: 65vh;
+    }
+    @media (min-width: 64rem) {
+      width: 60%;
+      height: 80vh;
+    }
+  }
+  /* 사이드바 */
+  .sidebar {
+    background-color: var(--pastel-yellow);
+    height: 20vh;
+    @media (min-width: 48rem) {
+      width: 50%;
+      float: left;
+      height: 65vh;
+    }
+    @media (min-width: 64rem) {
+      width: 40%;
+      height: 80vh;
+    }
+  }
+  /* 푸터 */
+  .footer {
+    background-color: var(--pastel-lavender);
+    height: 10vh;
+  }
+}
