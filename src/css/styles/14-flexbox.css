@@ -1,0 +1,63 @@
+@import '/src/common/theme.css';
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+.case-01 {
+  /* 독립적인 영역을 갖고있는 플렉스 컨테이너... 이제 블록 상자 아님 */
+  /* 영향을 직계 자식한테만 줄 수 있음 */
+  display: flex;
+  /* 기본 디렉션이 row */
+  /* row-reverse는 float: right;와 같음 */
+  flex-direction: row;
+  border: 1px solid red;
+  padding: 10px;
+
+  inline-size: 422px;
+
+  /* 플렉스 아이템도 BFC임 */
+  /* 그래서 inline요소인 span도 블록형태처럼 생기게됨 */
+  /* item이 포함된 속성... ^는 앞뒤 */
+  [class*='item'] {
+    /* BFC + flex item이라서 서로 마진이 안겹침 */
+    margin-block: 10px;
+
+    border: 1px solid currentColor;
+    background: var(--pastel-yellow);
+
+    /* 가로 세로 논리속성 */
+    inline-size: 100px;
+    block-size: 100px;
+
+    /* 블록 안에 있는 인라인들이 정렬됨 */
+    text-align: center;
+
+    /* 블록 사이즈랑 똑같이 주면 세로로 가운데 정렬됨 */
+    /* 근데 한줄만 가능... 예전에 주로 사용하던 기능 */
+    /* line-height: 100px; */
+
+    /* 세로로 가운데 정렬 */
+    align-content: center;
+  }
+
+  /* 자식요소들의 크기가 컨테이너보다 커도 줄바꿈이 안됨 */
+  /* nowarp이 기본값 */
+  /* flex-wrap: nowrap; */
+
+  /* 줄바꿈을 원한다면 warp */
+  /* flex-wrap: wrap; */
+
+  .item1 {
+    inline-size: 200px;
+  }
+
+  .item2 {
+    /* inline-size: 300px; */
+  }
+
+  /* flwx-direction, flex-wrap을 함께 쓸수 있는 숏핸드 키워드 */
+  flex-flow: row nowrap;
+}
