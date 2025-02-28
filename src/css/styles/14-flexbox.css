@@ -113,10 +113,10 @@ body *::after {
     flex-shrink: 1;
 
     /* grow는 확대를 시킴 */
-    /* flex-grow: 1; */
+    flex-grow: 1;
 
     /* grow, shirink, basis 단축 */
-    flex: 0 1 200px;
+    /* flex: 0 1 200px; */
   }
 
   div:nth-child(even) {
