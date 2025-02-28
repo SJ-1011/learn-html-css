@@ -1,0 +1,112 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+@import '/src/common/theme.css';
+/* 검색 바(searchbar) */
+
+body {
+  padding: 1.25rem;
+}
+/* 컴포넌트 */
+
+.brand {
+  /* a 태그이면서 logo인 클래스 */
+  a.logo {
+    display: block;
+  }
+}
+
+/* 버튼(circle) 컴포넌트 */
+.button-circle {
+  position: relative;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  aspect-ratio: 1/1;
+  border: 0;
+  /* 앞에있는건 콜백 color */
+  background: #23e97f linear-gradient(180deg, #23e97f 0%, #00dcc9 100%);
+  border-radius: 50%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #fff;
+
+    /* 가운데로 */
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+  }
+}
+
+/* 입력 서식 컴포넌트 */
+.input {
+  background-color: yellow;
+  display: flex;
+  flex-flow: row nowrap;
+
+  input {
+    block-size: 1.5rem;
+    border: 1px solid var(--pastel-gray);
+    font-size: 0.875rem;
+    padding: 0.125rem 0.5rem;
+    /* flex-grow: 1; 이란 width를 100%로 */
+    flex: 1 0 0;
+  }
+}
+
+/* 검색 폼 */
+/* fieldset은 버그가 많아서 스타일 안건드는게 좋음 */
+.form-search {
+  margin-block-start: 1.25rem;
+
+  fieldset {
+    border: 0;
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    .input {
+      flex: 1 0 0;
+    }
+  }
+}
+
+/* 검색 바 */
+.searchbar {
+  margin-block-start: 1.25rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.75rem;
+  border: 1px solid #03cc5c;
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  /* 24px보다 크면 다 됨 */
+  border-radius: 3.125rem;
+
+  .form-search {
+    margin-block-start: 0;
+    flex: 1 0 0;
+  }
+
+  input {
+    border: 0;
+
+    &:focus {
+      /* focus 시 어떤 서식이 선택되었는지 시각적으로 구분할 수 있는 다른 대안(디자인 수단)이 있는 경우 outline을 제거해도 좋지만 그렇지 않을 경우 절대로 outline을 없애서는 안된다. */
+      outline: none;
+    }
+  }
+
+  &:focus-within {
+    /* x축, y축, blur radius, spread radius, color */
+    box-shadow: 0px 4px 4px 0px rgba(68, 131, 63, 0.15);
+  }
+}
