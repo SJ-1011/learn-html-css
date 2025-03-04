@@ -27,11 +27,11 @@
     appearance: none;
   }
 
-  input:focus {
+  /* input:focus {
     outline: 0;
     box-shadow: 0 0 0 1px var(--blue-900);
     border-radius: var(--rounded-xs);
-  }
+  } */
 
   label.bg-img {
     /* no-repeat하면 이미지가 한번 나옴 */
