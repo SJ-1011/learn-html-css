@@ -1,0 +1,29 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/login-theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* 텍스트 링크 */
+.text-link {
+  --active-color: var(--blue-100);
+  /* 인라인 성향을 유지하면서 플렉스(BFC)됨 */
+  /* 작은 단위의 부품 만들때 용이하게 씀 */
+  /* inline-block과 같은데 그거보다 유연함 */
+  /* 그래서 width를 줄 수 있음 */
+  /* flex-flow column 못준다고함... */
+  display: inline-flex;
+
+  font-size: var(--font-md);
+
+  &:hover {
+    background-color: var(--active-color);
+  }
+
+  &:focus {
+    /* outline: 1px solid red; */
+    outline: 0;
+    box-shadow: 0 0 0 1px var(--blue-900);
+    border-radius: var(--rounded-xs);
+    /* border는 상자 크기에 영향, outline과 box-shadow는 컨텐츠? */
+  }
+}
