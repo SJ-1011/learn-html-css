@@ -19,6 +19,7 @@ form {
   /* reflow / repaint가 많아질수록 성능이 떨어짐? */
   position: relative;
   p {
+    display: none;
     font-size: var(--font-xs);
     color: var(--red-500);
     position: absolute;
@@ -28,4 +29,15 @@ form {
     inset-inline-start: 0;
     translate: 0 100%;
   }
+  
+  input:user-invalid + p {
+  /* input의 형제인 p는 block으로 바꾸기 */
+    display: block;
+  }
+  
+  input:placeholder-shown + p {
+    display: none;
+  }
+  
+
 }
