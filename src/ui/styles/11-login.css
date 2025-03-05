@@ -8,3 +8,63 @@
 @import '/src/ui/components/text-link/text-link.css';
 @import '/src/ui/components/switch/switch.css';
 @import '/src/ui/components/button/button.css';
+
+/* 컨테이너 */
+.container {
+  min-height: 100vh;
+  /* 다이나믹 뷰포트 높이 */
+  /* 모바일 폰의 경우... 상단바 크기같은거를 뺀 동적으로 적용된 뷰포트 높이 */
+  /* dvh를 지원 안하는 경우도 있으니까 vh랑 같이 쓰기 */
+  min-height: 100dvh;
+  padding: 0 var(--spacing-4);
+}
+
+/* 헤더 */
+.login-header {
+  padding: 4.375rem 0 2.8125rem;
+
+  @media (min-width: 48rem) {
+    padding: 6.25rem 0 3.125rem;
+  }
+
+  .logo {
+    margin: 0 auto;
+
+    @media (max-width: 48rem) {
+      width: 11.25rem;
+    }
+  }
+}
+
+/* 로그인 폼 */
+.login-form {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: var(--spacing-5);
+
+  fieldset {
+    display: contents;
+  }
+
+  .checkbox-wrapper {
+    order: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: center;
+
+    .text-link {
+      margin-inline-start: auto;
+    }
+  }
+
+  .button {
+    margin-top: var(--spacing-3);
+    height: 3.75rem;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 1px var(--red-500);
+    }
+  }
+}
