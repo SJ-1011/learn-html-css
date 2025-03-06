@@ -1,0 +1,36 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+body {
+  padding: 10%;
+}
+
+/* Select UI */
+.select-container {
+  /* background-color: red; */
+  border: 0.0625rem solid black;
+  border-radius: 8px;
+  display: inline-grid;
+  .lang {
+    border: none;
+    appearance: none;
+    background: transparent;
+    padding: 0.5em 1.75em;
+    grid-area: 1/1/2/2;
+  }
+
+  svg {
+    grid-area: 1/1/2/2;
+    margin: 0 0.5em;
+    pointer-events: none;
+  }
+  .global {
+    place-self: center start;
+  }
+
+  .dropdown {
+    place-self: center end;
+  }
+}

@@ -1,0 +1,57 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+.masonry-layout {
+  columns: 1;
+  column-gap: 1em;
+
+  @media (min-width: 640px) {
+    columns: 2;
+  }
+  @media (min-width: 768px) {
+    columns: 3;
+  }
+  @media (min-width: 1024px) {
+    columns: 4;
+  }
+  @media (min-width: 1200px) {
+    columns: 5;
+  }
+  @media (min-width: 1440px) {
+    columns: 6;
+  }
+
+  figure {
+    padding: 1rem;
+    margin: 2rem 0;
+    border: 1px solid black;
+    display: grid;
+    break-inside: avoid;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      grid-area: 1 / 1 / 2 / 2;
+      /* 필터를 쓰면 stack으로 필터가 위로 올라가게 되는 것 */
+      filter: sepia(100%);
+
+      &:hover {
+        filter: none;
+      }
+    }
+    figcaption {
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      place-self: end start;
+      width: 100%;
+      padding: 1em;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+}

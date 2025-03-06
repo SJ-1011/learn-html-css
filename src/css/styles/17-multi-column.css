@@ -1,0 +1,68 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+.container {
+  background-color: var(--pastel-lavender);
+
+  padding: 1em;
+
+  .case {
+    /* border: 1px solid red; */
+    margin-block: 20px;
+  }
+
+  /* 단 나누기 */
+  /* case-01 column-width */
+  .case-01 {
+    column-width: 15rem;
+
+    column-rule: 1px solid red;
+    column-gap: 2rem;
+  }
+  /* case-02 column-count */
+  .case-02 {
+    column-count: 4;
+
+    column-rule: 1px dotted green;
+
+    /* column-span: all을 지정하기 위해서는 block요소여야한다 */
+    span {
+      display: block;
+      background-color: var(--pastel-dark-blue);
+      color: white;
+      padding: 0.5em;
+      column-span: all;
+    }
+  }
+  /* case-03 columns 단축 속성에 column-width 선언 */
+  /* columns: width, count하면 count 우선
+  양쪽을 둘 다 주면 auto가 아닌 쪽이 우선, 둘다 숫자면 count 우선 */
+  /* columns: count */
+  .case-03 {
+    columns: 3rem;
+
+    column-rule: 3px double blue;
+  }
+  .case-04 {
+    columns: 2;
+    column-fill: balance;
+  }
+
+  .case-05 {
+    columns: 3;
+    column-fill: auto;
+    height: 6.25rem;
+  }
+}
+
+.wrapper {
+  background-color: var(--pastel-lemon);
+  padding: 1em;
+  columns: 5;
+  break-before: always;
+
+  /* .case {
+  } */
+}
