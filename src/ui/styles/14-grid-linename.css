@@ -1,0 +1,109 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/base.css';
+
+/* 헤더 */
+.header {
+  background: var(--pastel-coral);
+}
+
+/* 내비게이션 */
+.navigation {
+  background: var(--pastel-green);
+}
+
+/* 메인 콘텐츠 */
+.main {
+  background: var(--pastel-aqua);
+}
+
+/* 사이드 바 */
+.sidebar {
+  background: var(--pastel-yellow);
+}
+
+/* 푸터 */
+.footer {
+  background: var(--pastel-lavender);
+}
+
+/* 그리드를 활용한 반응형 레이아웃 */
+/* 그리드 컨테이너 */
+
+/* .container { */
+/* min-block-size: 100vh; */
+/* display: grid; */
+/* 3개의 컬럼으로 나누고 각각의 크기 설정 */
+/* 각각 라인에 이름 부여 */
+/* 이름을 두개 지정할 수도 있음 */
+/* grid-template-columns: [full-start] 1fr [content-start like-start] 8fr [content-end] 1fr [full-end like-end]; */
+/* 자동으로 설정 */
+/* grid-auto-rows: auto; */
+/* grid-template-rows: 1fr 1fr 8fr 1fr 1fr; */
+
+/* 빈공간이 생기면 마크업 순서대로 밀집해서 들어가게 하기 */
+/* grid-auto-flow: dense; */
+
+/* .header {
+    grid-column: full-start / full-end;
+  }
+
+  .navigation {
+    grid-column: full;
+  }
+
+  .main {
+    grid-column: content;
+  }
+
+  .sidebar {
+    grid-column: like;
+  }
+  .footer {
+    grid-column: full;
+  } */
+/* } */
+
+.container {
+  min-block-size: 100vh;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(5.3125rem, 1fr) [content-start] repeat(
+      12,
+      minmax(5.3125rem, 1fr)
+    )
+    [content-end] minmax(5.3125rem, 1fr) [full-end];
+  grid-auto-flow: dense;
+}
+
+.header {
+  grid-column: content;
+}
+
+.navigation {
+  grid-column: full;
+  display: grid;
+  /* 부모의 템플릿을 그대로 선언하겠다는 의미... 상속같은 느낌 */
+  grid-template-columns: subgrid;
+
+  .menu {
+    background-color: var(--pastel-dark-blue);
+    grid-column: content;
+
+    display: grid;
+    grid-template-columns: subgrid;
+
+    li {
+      grid-column: span 3;
+    }
+  }
+}
+.main {
+  grid-column: content;
+}
+.sidebar {
+  grid-column: content;
+}
+.footer {
+  grid-column: full;
+}
